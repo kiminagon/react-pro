@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>褒め言葉サイト</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #compliment {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        #complimentButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="compliment">クリックして褒め言葉を受け取ろう！</div>
+    <button id="complimentButton" onclick="showCompliment()">褒め言葉をもっと！</button>
+
+    <script>
+        // 褒め言葉のリスト
+        const compliments = [
+            "素晴らしい！", 
+            "あなたは優れています！", 
+            "素晴らしい仕事です！", 
+            "頑張っていますね！", 
+            "すごいですね！"
+        ];
+
+        // ボタンがクリックされたときに呼び出される関数
+        function showCompliment() {
+            // ランダムな褒め言葉を取得
+            const randomIndex = Math.floor(Math.random() * compliments.length);
+            const randomCompliment = compliments[randomIndex];
+
+            // 褒め言葉を表示
+            document.getElementById("compliment").innerText = randomCompliment;
+        }
+    </script>
+
+</body>
+</html>
